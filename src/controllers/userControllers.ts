@@ -68,16 +68,15 @@ export const forgotPassword = async (
   if (!userName || !password || !confirmPassword)
     throw new BadRequestError("Please provide all values")
 
-  const existingUser = await User.findOne({ userName })
-  if (!existingUser)
-    throw new NotFoundError("User does not exist. Create account.")
-
   if (password !== confirmPassword)
     throw new BadRequestError("Passwords must match")
 
-  req.body.password = await encode(password)
-  existingUser.password = req.body.password
-  await existingUser.save()
+  const user = await User.findOne({ userName })
+  if (!user) throw new NotFoundError("User does not exist. Create account.")
+
+  const newPassword = await encode(password)
+  user.password = newPassword
+  await user.save()
   res.status(StatusCodes.OK).json({ msg: "Password changed. Login to account" })
 }
 

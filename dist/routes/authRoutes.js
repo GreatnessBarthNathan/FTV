@@ -13,6 +13,7 @@ const apiLimiter = (0, express_rate_limit_1.default)({
     message: { msg: "IP rate limit exceeded, retry in 15mins" },
 });
 router.post("/register", apiLimiter, authControllers_1.register);
+router.post("/forgot-password", authControllers_1.forgotPassword);
 router.post("/login", apiLimiter, authControllers_1.login);
 router.get("/logout", authControllers_1.logout);
 exports.default = router;

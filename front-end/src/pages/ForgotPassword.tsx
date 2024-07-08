@@ -17,7 +17,7 @@ function ForgotPassword() {
     const data = Object.fromEntries(formData)
 
     try {
-      await customFetch.post("/user/forgot-password", data)
+      await customFetch.post("/auth/forgot-password", data)
       toast.success("Password changed successfully")
       navigate("/login")
       setIsSubmitting("")

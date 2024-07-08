@@ -4,7 +4,6 @@ import {
   currentUser,
   singleUser,
   updateUser,
-  forgotPassword,
   changePassword,
 } from "../controllers/userControllers"
 
@@ -13,8 +12,6 @@ const router = express.Router()
 router.get("/", allUsers)
 
 router.get("/current-user", currentUser)
-
-router.post("/forgot-password", forgotPassword)
 
 router.post("/change-password", changePassword)
 

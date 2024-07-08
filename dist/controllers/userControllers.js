@@ -69,14 +69,14 @@ const forgotPassword = (req, res) => __awaiter(void 0, void 0, void 0, function*
     const { userName, password, confirmPassword } = req.body;
     if (!userName || !password || !confirmPassword)
         throw new customErrors_1.BadRequestError("Please provide all values");
-    const existingUser = yield userModel_1.default.findOne({ userName });
-    if (!existingUser)
-        throw new customErrors_1.NotFoundError("User does not exist. Create account.");
     if (password !== confirmPassword)
         throw new customErrors_1.BadRequestError("Passwords must match");
-    req.body.password = yield (0, auth_1.encode)(password);
-    existingUser.password = req.body.password;
-    yield existingUser.save();
+    const user = yield userModel_1.default.findOne({ userName });
+    if (!user)
+        throw new customErrors_1.NotFoundError("User does not exist. Create account.");
+    const newPassword = yield (0, auth_1.encode)(password);
+    user.password = newPassword;
+    yield user.save();
     res.status(http_status_codes_1.StatusCodes.OK).json({ msg: "Password changed. Login to account" });
 });
 exports.forgotPassword = forgotPassword;

@@ -3,6 +3,8 @@ import {
   NotFoundError,
   UnauthenticatedError,
 } from "../errors/customErrors"
+import { AuthenticatedRequest } from "../middleware/authMiddleware"
+
 import { Request, Response } from "express"
 import User from "../models/userModel"
 import { encode, confirmPassword } from "../utils/auth"
@@ -65,4 +67,25 @@ export const logout = (req: Request, res: Response) => {
   })
 
   res.status(StatusCodes.OK).json({ msg: "Logged out..." })
+}
+
+// FORGOT PASSWORD
+export const forgotPassword = async (
+  req: AuthenticatedRequest,
+  res: Response
+) => {
+  const { userName, password, confirmPassword } = req.body
+  if (!userName || !password || !confirmPassword)
+    throw new BadRequestError("Please provide all values")
+
+  if (password !== confirmPassword)
+    throw new BadRequestError("Passwords must match")
+
+  const user = await User.findOne({ userName })
+  if (!user) throw new NotFoundError("User does not exist. Create account.")
+
+  const newPassword = await encode(password)
+  user.password = newPassword
+  await user.save()
+  res.status(StatusCodes.OK).json({ msg: "Password changed. Login to account" })
 }

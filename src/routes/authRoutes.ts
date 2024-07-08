@@ -1,5 +1,10 @@
 import express from "express"
-import { register, login, logout } from "../controllers/authControllers"
+import {
+  register,
+  login,
+  logout,
+  forgotPassword,
+} from "../controllers/authControllers"
 
 const router = express.Router()
 
@@ -11,6 +16,8 @@ const apiLimiter = rateLimiter({
 })
 
 router.post("/register", apiLimiter, register)
+
+router.post("/forgot-password", forgotPassword)
 
 router.post("/login", apiLimiter, login)
 

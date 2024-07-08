@@ -45,7 +45,7 @@ function CreateProduct() {
           <FormRow type='number' labelText='store' name='store' required />
           <button
             type='submit'
-            className={`bg-blue-500 p-3 rounded text-white hover:bg-blue-700 ease-in-out duration-300 self-end ${
+            className={`bg-[var(--red)] p-3 rounded text-white hover:bg-[var(--orange)] ease-in-out duration-300 self-end ${
               isSubmitting === "submitting" && "cursor-wait"
             }`}
           >

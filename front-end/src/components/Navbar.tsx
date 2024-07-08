@@ -10,7 +10,7 @@ const Navbar = () => {
       className={`flex justify-between items-center p-3 px-2 lg:px-5 h-[80px] md:h-[100px] bg-white w-full sticky top-0 z-10`}
     >
       <button
-        className='text-xl md:text-3xl text-[#05156D] hover:text-indigo-800 ease-in-out duration-300 lg:opacity-0'
+        className='text-xl md:text-3xl text-[var(--red)] hover:text-[var(--orange)] ease-in-out duration-300 lg:opacity-0'
         onClick={() => {
           setShowSidebar(!showSidebar)
         }}

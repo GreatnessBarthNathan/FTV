@@ -30,7 +30,7 @@ function Register() {
 
   return (
     <div className='pb-[3rem] w-full h-full overflow-auto'>
-      <div className='bg-white w-[90%] m-auto mt-[50px] rounded border-t-4 border-[#05156D] p-5 shadow-md shadow-slate-300 md:w-[50%] lg:w-[40%]'>
+      <div className='bg-white w-[90%] m-auto mt-[50px] rounded border-t-4 border-[var(--red)] p-5 shadow-md shadow-slate-300 md:w-[50%] lg:w-[40%]'>
         <Logo container='w-[100px] m-auto mb-2' />
         <h2 className='text-center text-xl mb-10'>Register</h2>
         <form onSubmit={handleSubmit}>
@@ -64,8 +64,8 @@ function Register() {
           />
           <button
             type='submit'
-            className={`text-white bg-[#05156D] w-full p-2 rounded mt-4 cursor-pointer hover:bg-blue-300 ease-in-out duration-300 ${
-              isSubmitting && "bg-indigo-200 cursor-wait"
+            className={`text-white bg-[var(--red)] w-full p-2 rounded mt-4 cursor-pointer hover:bg-[var(--orange)] ease-in-out duration-300 ${
+              isSubmitting && "bg-[var(--orange)] cursor-wait"
             }`}
             disabled={isSubmitting === "submitting"}
           >

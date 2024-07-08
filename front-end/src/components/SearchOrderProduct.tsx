@@ -13,7 +13,7 @@ function SearchOrderProduct() {
         <select
           name='product'
           id='product'
-          className='p-2 md:p-3 bg-[whitesmoke] w-full rounded outline-none border border-blue-500 mt-1 capitalize text-[8px] md:text-base'
+          className='p-2 md:p-3 bg-[whitesmoke] w-full rounded outline-none border mt-1 capitalize text-[8px] md:text-base'
         >
           {productNames.map((optionValue: string) => {
             return (
@@ -27,7 +27,7 @@ function SearchOrderProduct() {
 
       <button
         type='submit'
-        className='text-[8px] md:text-base bg-blue-500 text-white p-[10px] md:p-3 rounded cursor-pointer  hover:bg-blue-700 col-span-1 self-end'
+        className='text-[8px] md:text-base bg-[var(--red)] text-white p-[10px] md:p-3 rounded cursor-pointer  hover:bg-[var(--orange)] col-span-1 self-end'
       >
         Submit
       </button>

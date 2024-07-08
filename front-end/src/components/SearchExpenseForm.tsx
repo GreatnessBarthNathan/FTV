@@ -26,7 +26,7 @@ function SearchExpenseForm({
           required
           extraStyle='text-[8px] md:text-sm lg:text-base p-1'
         />
-        <button className='col-span-2 md:col-span-1 bg-blue-500 self-end p-[10px] rounded text-white hover:bg-blue-700 ease-in-out duration-300'>
+        <button className='col-span-2 md:col-span-1 bg-[var(--red)] self-end p-[10px] rounded text-white hover:bg-[var(--orange)] ease-in-out duration-300'>
           Filter
         </button>
       </form>

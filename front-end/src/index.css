@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --red: #fe1a19;
+  --orange: #ffa500;
+}
 body {
   margin: 0;
   background: whitesmoke;
@@ -42,7 +46,7 @@ body {
   width: 70px;
   height: 70px;
   margin: auto;
-  border: 5px solid blue;
+  border: 5px solid var(--red);
   border-top-color: white;
   border-radius: 50%;
   animation: spinner 0.5s linear infinite;

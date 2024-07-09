@@ -17,6 +17,7 @@ const UserSchema = new mongoose.Schema({
   userName: {
     type: String,
     unique: true,
+    trim: true,
     required: true,
     minlength: 3,
     maxlength: 20,
@@ -25,6 +26,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
     minlength: 3,
+    trim: true,
   },
   role: {
     type: String,

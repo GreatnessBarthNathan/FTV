@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.changePassword = exports.forgotPassword = exports.updateUser = exports.singleUser = exports.currentUser = exports.allUsers = void 0;
+exports.changePassword = exports.updateUser = exports.singleUser = exports.currentUser = exports.allUsers = void 0;
 const customErrors_1 = require("../errors/customErrors");
 const userModel_1 = __importDefault(require("../models/userModel"));
 const http_status_codes_1 = require("http-status-codes");
@@ -64,22 +64,6 @@ const updateUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     res.status(http_status_codes_1.StatusCodes.OK).json({ updatedUser });
 });
 exports.updateUser = updateUser;
-// FORGOT PASSWORD
-const forgotPassword = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { userName, password, confirmPassword } = req.body;
-    if (!userName || !password || !confirmPassword)
-        throw new customErrors_1.BadRequestError("Please provide all values");
-    if (password !== confirmPassword)
-        throw new customErrors_1.BadRequestError("Passwords must match");
-    const user = yield userModel_1.default.findOne({ userName });
-    if (!user)
-        throw new customErrors_1.NotFoundError("User does not exist. Create account.");
-    const newPassword = yield (0, auth_1.encode)(password);
-    user.password = newPassword;
-    yield user.save();
-    res.status(http_status_codes_1.StatusCodes.OK).json({ msg: "Password changed. Login to account" });
-});
-exports.forgotPassword = forgotPassword;
 // CHANGE PASSWORD
 const changePassword = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     var _e;

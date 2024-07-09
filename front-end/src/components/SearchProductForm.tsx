@@ -14,7 +14,7 @@ function SearchProductForm({
         <select
           name='product'
           id='product'
-          className='p-2 md:p-3 bg-[whitesmoke] w-full rounded outline-none border  mt-1 capitalize text-[8px] md:text-base'
+          className='p-2 md:p-3 bg-[whitesmoke] w-full rounded outline-none border mt-1 capitalize text-[8px] md:text-base'
         >
           {["all products", ...list].map((optionValue: string) => {
             return (

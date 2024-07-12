@@ -104,7 +104,7 @@ function Expenses() {
         </h2>
         <Link
           to='/dashboard/create-expense'
-          className='bg-[var(--red)] text-white rounded py-1 px-2 hover:bg-[var(--orange)] ease-in-out duration-300'
+          className='bg-[var(--primary)] text-white rounded py-1 px-2 hover:bg-[var(--hoverColor)] ease-in-out duration-300'
         >
           New Expense
         </Link>

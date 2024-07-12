@@ -7,10 +7,10 @@ const Navbar = () => {
   const { showSidebar, setShowSidebar } = useDashboardContext()
   return (
     <div
-      className={`flex justify-between items-center p-3 px-2 lg:px-5 h-[80px] md:h-[100px] bg-white w-full sticky top-0 z-10`}
+      className={`flex justify-between items-center p-3 px-2 lg:px-5 h-[80px] md:h-[100px] bg-[var(--bgColor)] w-full sticky top-0 z-10`}
     >
       <button
-        className='text-xl md:text-3xl text-[var(--red)] hover:text-[var(--orange)] ease-in-out duration-300 lg:opacity-0'
+        className='text-xl md:text-3xl text-[var(--primary)] hover:text-[var(--hoverColor)] ease-in-out duration-300 lg:opacity-0'
         onClick={() => {
           setShowSidebar(!showSidebar)
         }}

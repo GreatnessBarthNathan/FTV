@@ -10,7 +10,7 @@ const Logout = () => {
   return (
     <div className='relative'>
       <div
-        className='flex items-center space-x-3 bg-[var(--red)] text-white p-1 rounded cursor-pointer  hover:bg-[var(--orange)] ease-in-out duration-300'
+        className='flex items-center space-x-3 bg-[var(--primary)] text-white p-1 rounded cursor-pointer  hover:bg-[var(--hoverColor)] ease-in-out duration-300'
         onClick={() => setShowLogout(!showLogout)}
       >
         <CgProfile />
@@ -20,7 +20,7 @@ const Logout = () => {
 
       <div
         onClick={logout}
-        className={`absolute text-center bg-[var(--red)] text-white p-1 rounded w-full top-[50px] cursor-pointer hover:bg-[var(--orange)] ease-in-out duration-300 ${
+        className={`absolute text-center bg-[var(--primary)] text-white p-1 rounded w-full top-[50px] cursor-pointer hover:bg-[var(--hoverColor)] ease-in-out duration-300 ${
           !showLogout && "hidden"
         }`}
       >

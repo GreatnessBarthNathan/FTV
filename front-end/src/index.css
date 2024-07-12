@@ -3,8 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --red: #fe1a19;
-  --orange: #ffa500;
+  --primary: #fe1a19;
+  --hoverColor: #ffa500;
+  --bgColor: white;
+  --textSecondary: darkslategray;
 }
 body {
   margin: 0;
@@ -32,7 +34,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(59, 59, 207);
+  background-color: var(--primary);
   border-radius: 6px;
 }
 

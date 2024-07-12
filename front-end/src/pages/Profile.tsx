@@ -89,7 +89,7 @@ const Profile = () => {
 
           <button
             type='submit'
-            className={`text-white self-end bg-[var(--red)] rounded cursor-pointer hover:bg-[var(--orange)] ease-in-out duration-300 mt-7 p-[10px] `}
+            className={`text-white self-end bg-[var(--primary)] rounded cursor-pointer hover:bg-[var(--hoverColor)] ease-in-out duration-300 mt-7 p-[10px] `}
           >
             Submit
           </button>

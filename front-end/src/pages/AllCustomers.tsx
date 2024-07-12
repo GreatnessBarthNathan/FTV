@@ -74,7 +74,7 @@ function AllCustomers() {
 
             <button
               type='submit'
-              className={`bg-[var(--red)] p-[10px] rounded text-white hover:bg-[var(--orange)] ease-in-out duration-300 self-end ${
+              className={`bg-[var(--primary)] p-[10px] rounded text-white hover:bg-[var(--hoverColor)] ease-in-out duration-300 self-end ${
                 isSubmitting === "submitting" && "cursor-wait"
               }`}
             >

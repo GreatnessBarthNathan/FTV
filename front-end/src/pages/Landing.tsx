@@ -3,7 +3,7 @@ import Logo from "../components/Logo"
 
 function Landing() {
   return (
-    <main className='bg-white w-full h-screen overflow-auto'>
+    <main className='bg-[var(--bgColor)] w-full h-screen overflow-auto'>
       <div className='w-[85%] m-auto flex space-x-5 py-5 overflow-auto'>
         {/* left part */}
         <div className='w-full lg:w-[50%]'>
@@ -22,15 +22,15 @@ function Landing() {
                 className='w-full'
               />
             </div>
-            <p className='mt-5 text-slate-700 leading-7 text-sm md:text-base lg:leading-5'>
-              <span className='block text-[var(--red)] font-bold'>
+            <p className='mt-5 text-[var(--textSecondary)] leading-7 text-sm md:text-base lg:leading-5'>
+              <span className='block text-[var(--primary)] font-bold'>
                 ABOUT US
               </span>
               A ministry-affiliated mini-mart offering high-quality provisions
               to the community, blending spiritual mission with practical
               service.
               <p className='mt-5'>
-                <span className='block text-[var(--red)] font-bold'>
+                <span className='block text-[var(--primary)] font-bold'>
                   VISION
                 </span>
                 Our Vision is to be a community beacon, delivering quality and
@@ -38,7 +38,7 @@ function Landing() {
                 ministry's values.
               </p>
               <p className='mt-5'>
-                <span className='block text-[var(--red)] font-bold'>
+                <span className='block text-[var(--primary)] font-bold'>
                   MISSION
                 </span>
                 Our Mission is to provide esssential goods in a welcoming,
@@ -46,7 +46,7 @@ function Landing() {
                 integrity and compassion.
               </p>
               <p className='mt-5'>
-                <span className='block text-[var(--red)] font-bold'>
+                <span className='block text-[var(--primary)] font-bold'>
                   CORE VALUES
                 </span>
                 <div>
@@ -60,13 +60,13 @@ function Landing() {
             <div className='mt-10'>
               <Link
                 to='/register'
-                className='bg-[var(--red)] py-2 px-4 rounded text-white text-lg mr-4 hover:bg-[var(--orange)] ease-in-out duration-300'
+                className='bg-[var(--primary)] py-2 px-4 rounded text-white text-lg mr-4 hover:bg-[var(--hoverColor)] ease-in-out duration-300'
               >
                 Create Account
               </Link>
               <Link
                 to='/login'
-                className='bg-[var(--red)] py-2 px-4 rounded text-white text-lg hover:bg-[var(--orange)] ease-in-out duration-300'
+                className='bg-[var(--primary)] py-2 px-4 rounded text-white text-lg hover:bg-[var(--hoverColor)] ease-in-out duration-300'
               >
                 Login
               </Link>

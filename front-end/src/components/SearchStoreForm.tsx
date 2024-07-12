@@ -28,7 +28,7 @@ function SearchStoreForm({
 
       <button
         type='submit'
-        className='text-xs md:text-base bg-[var(--red)] text-white p-[10px] md:p-3 rounded cursor-pointer  hover:bg-[var(--orange)] col-span-1 self-end'
+        className='text-xs md:text-base bg-[var(--primary)] text-white p-[10px] md:p-3 rounded cursor-pointer  hover:bg-[var(--hoverColor)] col-span-1 self-end'
       >
         Submit
       </button>

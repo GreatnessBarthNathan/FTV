@@ -79,7 +79,7 @@ function UpdateProduct() {
       <h1 className='md:text-2xl lg:text-4xl mb-2 lg:mb-5 font-bold'>
         Update Product
       </h1>
-      <section className='bg-white px-2 py-5 rounded-md'>
+      <section className='bg-[var(--bgColor)] px-2 py-5 rounded-md'>
         <form
           onSubmit={handleSubmit}
           className='grid md:grid-cols-2 lg:grid-cols-3 gap-2'
@@ -183,7 +183,7 @@ function UpdateProduct() {
 
           <button
             type='submit'
-            className={`bg-[var(--red)] p-2 rounded text-white hover:bg-[var(--orange)] ease-in-out duration-300 self-end ${
+            className={`bg-[var(--primary)] p-2 rounded text-white hover:bg-[var(--hoverColor)] ease-in-out duration-300 self-end ${
               isSubmitting === "submitting" && "cursor-wait"
             }`}
           >

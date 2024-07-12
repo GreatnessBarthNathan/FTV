@@ -62,7 +62,7 @@ function CreateExpense() {
 
           <button
             type='submit'
-            className={`text-xs md:text-sm lg:text-base bg-[var(--red)] p-3 rounded text-white hover:bg-[var(--orange)] ease-in-out duration-300 self-end ${
+            className={`text-xs md:text-sm lg:text-base bg-[var(--primary)] p-3 rounded text-white hover:bg-[var(--hoverColor)] ease-in-out duration-300 self-end ${
               isSubmitting === "submitting" && "cursor-wait"
             }`}
           >

@@ -2,7 +2,7 @@
 import PageLink from "./PageLinks"
 import { FaSitemap, FaShoppingBasket } from "react-icons/fa"
 // import { MdSettings, MdOutlineCreateNewFolder, MdHistory } from "react-icons/md"
-import { MdOutlineCreateNewFolder } from "react-icons/md"
+import { MdOutlineCreateNewFolder, MdHistory } from "react-icons/md"
 import { CgProfile } from "react-icons/cg"
 import { CiShoppingCart } from "react-icons/ci"
 import { AiFillAppstore } from "react-icons/ai"
@@ -33,7 +33,7 @@ const BigSidebar = () => {
           <PageLink url='products' text='All Products' icon={<FaSitemap />} />
           <PageLink url={`store`} text='Store' icon={<AiFillAppstore />} />
           <PageLink url='expenses' text='Expenses' icon={<GiExpense />} />
-          {/* <PageLink url='history' text='History' icon={<MdHistory />} /> */}
+          <PageLink url='history' text='History' icon={<MdHistory />} />
           <PageLink url='customers' text='Customers' icon={<IoIosPeople />} />
           {/* {currentUser.role === "admin" && (
             <PageLink

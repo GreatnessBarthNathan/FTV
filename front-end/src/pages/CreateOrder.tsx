@@ -302,12 +302,12 @@ function CreateOrder() {
         <h1 className='md:text-2xl lg:text-4xl mb-2 lg:mb-5 font-bold'>
           Create New Order
         </h1>
-        <section className='bg-white px-2 py-5 rounded-md shadow'>
+        <section className='bg-[var(--bgColor)] px-2 py-5 rounded-md shadow'>
           <SearchOrderProduct />
         </section>
 
         {/* TABLE HEAD */}
-        <div className='grid grid-cols-5 mt-10 text-left border border-b-slate-600 p-3 font-bold bg-white'>
+        <div className='grid grid-cols-5 mt-10 text-left border border-b-slate-600 p-3 font-bold bg-[var(--bgColor)]'>
           <h2 className='col-span-2 text-[8px] md:text-sm lg:text-base'>
             Item
           </h2>

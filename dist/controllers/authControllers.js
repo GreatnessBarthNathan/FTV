@@ -30,6 +30,7 @@ const register = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const isFirstUser = (yield userModel_1.default.countDocuments({})) === 0;
     if (isFirstUser) {
         req.body.role = "admin";
+        req.body.approved = "true";
     }
     req.body.password = yield (0, auth_1.encode)(password);
     yield userModel_1.default.create(req.body);
@@ -48,6 +49,7 @@ const login = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         _id: userExists._id,
         userName: userExists.userName,
         role: userExists.role,
+        approved: userExists.approved,
     };
     const token = (0, tokenUtils_1.createJwt)(payload);
     const oneDay = 1000 * 60 * 60 * 24;

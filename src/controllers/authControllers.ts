@@ -25,6 +25,7 @@ export const register = async (req: Request, res: Response) => {
   const isFirstUser = (await User.countDocuments({})) === 0
   if (isFirstUser) {
     req.body.role = "admin"
+    req.body.approved = "true"
   }
 
   req.body.password = await encode(password)
@@ -47,6 +48,7 @@ export const login = async (req: Request, res: Response) => {
     _id: userExists._id,
     userName: userExists.userName,
     role: userExists.role,
+    approved: userExists.approved,
   }
   const token = createJwt(payload)
   const oneDay = 1000 * 60 * 60 * 24

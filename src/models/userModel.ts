@@ -28,6 +28,10 @@ const UserSchema = new mongoose.Schema({
     minlength: 3,
     trim: true,
   },
+  approved: {
+    type: Boolean,
+    default: false,
+  },
   role: {
     type: String,
     default: "user",

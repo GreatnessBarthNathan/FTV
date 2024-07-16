@@ -5,6 +5,7 @@ import {
   singleUser,
   updateUser,
   changePassword,
+  approveUser,
 } from "../controllers/userControllers"
 
 const router = express.Router()
@@ -16,6 +17,8 @@ router.get("/current-user", currentUser)
 router.post("/change-password", changePassword)
 
 router.patch("/update-user/:id", updateUser)
+
+router.patch("/approve-user/:id", approveUser)
 
 router.get("/:id", singleUser)
 

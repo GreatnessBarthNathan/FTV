@@ -59,7 +59,6 @@ export const updateUser = async (req: AuthenticatedRequest, res: Response) => {
   res.status(StatusCodes.OK).json({ updatedUser })
 }
 
-
 // CHANGE PASSWORD
 export const changePassword = async (
   req: AuthenticatedRequest,
@@ -84,4 +83,26 @@ export const changePassword = async (
   await user.save()
 
   res.status(StatusCodes.OK).json({ msg: "Password changed" })
+}
+
+// APPROVE USER
+export const approveUser = async (req: AuthenticatedRequest, res: Response) => {
+  if (req.user?.role !== "admin")
+    throw new UnAuthorizedError("Unauthorized to perform this task")
+
+  const user = await User.findById(req.params.id)
+  if (!user) throw new NotFoundError("user not found")
+
+  let approval
+  if (user.approved === true) {
+    approval = false
+  } else {
+    approval = true
+  }
+
+  await User.findByIdAndUpdate(
+    req.params.id,
+    { approved: approval },
+    { runValidators: true, new: true }
+  )
 }

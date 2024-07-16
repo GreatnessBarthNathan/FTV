@@ -8,11 +8,12 @@ import { CiShoppingCart } from "react-icons/ci"
 import { AiFillAppstore } from "react-icons/ai"
 import { GiExpense } from "react-icons/gi"
 import { IoIosPeople } from "react-icons/io"
-// import { TbLockCheck } from "react-icons/tb"
+import { TbLockCheck } from "react-icons/tb"
 import Logo from "./Logo"
+import { useDashboardContext } from "../pages/DashboardLayout"
 
 const BigSidebar = () => {
-  // const { currentUser } = useDashboardContext()
+  const { currentUser } = useDashboardContext()
 
   return (
     // wrapper
@@ -35,13 +36,13 @@ const BigSidebar = () => {
           <PageLink url='expenses' text='Expenses' icon={<GiExpense />} />
           <PageLink url='history' text='History' icon={<MdHistory />} />
           <PageLink url='customers' text='Customers' icon={<IoIosPeople />} />
-          {/* {currentUser.role === "admin" && (
+          {currentUser.role === "admin" && (
             <PageLink
               url='permissions'
               text='Permissions'
               icon={<TbLockCheck />}
             />
-          )} */}
+          )}
           <PageLink url={`profile`} text='Profile' icon={<CgProfile />} />
           {/* <PageLink url={`settings`} text='Settings' icon={<MdSettings />} /> */}
         </div>

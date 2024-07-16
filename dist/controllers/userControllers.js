@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.changePassword = exports.updateUser = exports.singleUser = exports.currentUser = exports.allUsers = void 0;
+exports.approveUser = exports.changePassword = exports.updateUser = exports.singleUser = exports.currentUser = exports.allUsers = void 0;
 const customErrors_1 = require("../errors/customErrors");
 const userModel_1 = __importDefault(require("../models/userModel"));
 const http_status_codes_1 = require("http-status-codes");
@@ -84,4 +84,22 @@ const changePassword = (req, res) => __awaiter(void 0, void 0, void 0, function*
     res.status(http_status_codes_1.StatusCodes.OK).json({ msg: "Password changed" });
 });
 exports.changePassword = changePassword;
+// APPROVE USER
+const approveUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    var _f;
+    if (((_f = req.user) === null || _f === void 0 ? void 0 : _f.role) !== "admin")
+        throw new customErrors_1.UnAuthorizedError("Unauthorized to perform this task");
+    const user = yield userModel_1.default.findById(req.params.id);
+    if (!user)
+        throw new customErrors_1.NotFoundError("user not found");
+    let approval;
+    if (user.approved === true) {
+        approval = false;
+    }
+    else {
+        approval = true;
+    }
+    yield userModel_1.default.findByIdAndUpdate(req.params.id, { approved: approval }, { runValidators: true, new: true });
+});
+exports.approveUser = approveUser;
 //# sourceMappingURL=userControllers.js.map

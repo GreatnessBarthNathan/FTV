@@ -8,12 +8,11 @@ import { CiShoppingCart } from "react-icons/ci"
 import { AiFillAppstore } from "react-icons/ai"
 import { GiExpense } from "react-icons/gi"
 import { IoIosPeople } from "react-icons/io"
-// import { TbLockCheck } from "react-icons/tb"
+import { TbLockCheck } from "react-icons/tb"
 import Logo from "./Logo"
 
 const SmallSidebar = () => {
-  // const { showSidebar, setShowSidebar, currentUser } = useDashboardContext()
-  const { showSidebar, setShowSidebar } = useDashboardContext()
+  const { showSidebar, setShowSidebar, currentUser } = useDashboardContext()
 
   return (
     <>
@@ -55,13 +54,13 @@ const SmallSidebar = () => {
                 text='Customers'
                 icon={<IoIosPeople />}
               />
-              {/* {currentUser.role === "admin" && (
+              {currentUser.role === "admin" && (
                 <PageLink
                   url='permissions'
                   text='Permissions'
                   icon={<TbLockCheck />}
                 />
-              )} */}
+              )}
               <PageLink url={`profile`} text='Profile' icon={<CgProfile />} />
               {/* <PageLink
                 url={`settings`}

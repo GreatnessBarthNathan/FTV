@@ -1,11 +1,11 @@
 import { useDashboardContext } from "../pages/DashboardLayout"
 import PageLink from "./PageLinks"
 import { FaSitemap, FaShoppingBasket, FaTimes } from "react-icons/fa"
-// import { MdSettings, MdOutlineCreateNewFolder, MdHistory } from "react-icons/md"
-import { MdOutlineCreateNewFolder, MdHistory } from "react-icons/md"
+import { MdSettings, MdOutlineCreateNewFolder, MdHistory } from "react-icons/md"
+import { HiOutlineCash } from "react-icons/hi"
 import { CgProfile } from "react-icons/cg"
 import { CiShoppingCart } from "react-icons/ci"
-import { AiFillAppstore } from "react-icons/ai"
+import { AiFillAppstore, AiOutlineBank } from "react-icons/ai"
 import { GiExpense } from "react-icons/gi"
 import { IoIosPeople } from "react-icons/io"
 import { TbLockCheck } from "react-icons/tb"
@@ -50,6 +50,16 @@ const SmallSidebar = () => {
               <PageLink url='expenses' text='Expenses' icon={<GiExpense />} />
               <PageLink url='history' text='History' icon={<MdHistory />} />
               <PageLink
+                url='cash'
+                text='Cash Record'
+                icon={<HiOutlineCash />}
+              />
+              <PageLink
+                url='bank'
+                text='Bank Record'
+                icon={<AiOutlineBank />}
+              />
+              <PageLink
                 url='customers'
                 text='Customers'
                 icon={<IoIosPeople />}
@@ -62,11 +72,11 @@ const SmallSidebar = () => {
                 />
               )}
               <PageLink url={`profile`} text='Profile' icon={<CgProfile />} />
-              {/* <PageLink
+              <PageLink
                 url={`settings`}
                 text='Settings'
                 icon={<MdSettings />}
-              /> */}
+              />
             </div>
           </div>
         </div>

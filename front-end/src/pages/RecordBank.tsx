@@ -5,7 +5,7 @@ import axios from "axios"
 import { toast } from "react-toastify"
 import { useNavigate } from "react-router-dom"
 
-function CreateExpense() {
+function RecordBank() {
   const [isSubmitting, setIsSubmitting] = useState("")
   const navigate = useNavigate()
 
@@ -15,10 +15,10 @@ function CreateExpense() {
     const data = Object.fromEntries(formData)
     setIsSubmitting("submitting")
     try {
-      await customFetch.post("/expense", data)
-      toast.success("Expense record saved")
+      await customFetch.post("/bank", data)
+      toast.success("New bank record created")
       setIsSubmitting("")
-      navigate("/dashboard/expenses")
+      navigate("/dashboard/bank")
     } catch (error) {
       if (axios.isAxiosError(error)) {
         toast.error(error?.response?.data?.msg)
@@ -31,7 +31,7 @@ function CreateExpense() {
   return (
     <main className='py-5'>
       <h1 className='md:text-2xl lg:text-4xl mb-2 lg:mb-5 font-bold'>
-        New Expense
+        New Bank Record
       </h1>
       <section className='bg-white px-2 py-5 rounded-md shadow'>
         <form onSubmit={handleSubmit}>
@@ -44,23 +44,24 @@ function CreateExpense() {
           />
           <div className='mt-2 text-xs md:text-sm lg:text-base'>
             <label htmlFor='remark' className='block'>
-              Transaction Type
+              Action
             </label>
             <select
-              name='transactionType'
+              name='action'
               className='border  w-full rounded p-2 mt-1 outline-0'
             >
-              <option value='cash'>cash</option>
-              <option value='bank'>bank</option>
+              <option value='add'>add</option>
+              <option value='release'>release</option>
+              <option value='to cash'>to cash</option>
             </select>
           </div>
           <div className='mt-2 text-xs md:text-sm lg:text-base'>
-            <label htmlFor='description' className='block'>
-              Description
+            <label htmlFor='remark' className='block'>
+              Remark
             </label>
             <textarea
-              name='description'
-              id='description'
+              name='remark'
+              id='remark'
               cols={30}
               rows={5}
               className='border w-full rounded p-2 mt-1 outline-0'
@@ -73,7 +74,7 @@ function CreateExpense() {
               isSubmitting === "submitting" && "cursor-wait"
             }`}
           >
-            Enter Expense
+            Enter Record
           </button>
         </form>
       </section>
@@ -81,4 +82,4 @@ function CreateExpense() {
   )
 }
 
-export default CreateExpense
+export default RecordBank

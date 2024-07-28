@@ -20,13 +20,13 @@ const BigSidebar = () => {
     // wrapper
     <div className='hidden lg:block h-[100dvh] lg:col-span-1 pb-11 overflow-hidden bg-white'>
       {/* container */}
-      <div className='h-[94dvh] overflow-hidden pt-[10px] bg-white'>
+      <div className='h-[94vh] overflow-hidden pt-[10px] bg-white'>
         {/* logo */}
         <div>
           <Logo container='w-[50%] m-auto mb-[30px]' image='w-full' />
         </div>
         {/* links */}
-        <div className='h-[70%] overflow-auto'>
+        <div className='h-[80%] overflow-auto'>
           <PageLink url='' text='Create Order' icon={<CiShoppingCart />} />
           <PageLink url='orders' text='Orders' icon={<FaShoppingBasket />} />
           <PageLink

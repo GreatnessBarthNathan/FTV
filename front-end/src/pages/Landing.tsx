@@ -22,7 +22,7 @@ function Landing() {
                 className='w-full'
               />
             </div>
-            <p className='mt-5 text-[var(--textSecondary)] leading-7 text-sm md:text-base lg:leading-5'>
+            <div className='mt-5 text-[var(--textSecondary)] leading-7 text-sm md:text-base lg:leading-5'>
               <span className='block text-[var(--primary)] font-bold'>
                 ABOUT US
               </span>
@@ -49,14 +49,14 @@ function Landing() {
                 <span className='block text-[var(--primary)] font-bold'>
                   CORE VALUES
                 </span>
-                <div>
+                <span>
                   <li>Welcoming</li>
                   <li>Friendly</li>
                   <li>Vibrant</li>
                   <li>Dependable</li>
-                </div>
+                </span>
               </p>
-            </p>
+            </div>
             <div className='mt-10'>
               <Link
                 to='/register'
